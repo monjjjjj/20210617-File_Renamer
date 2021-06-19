@@ -1,0 +1,10 @@
+re.search(pattern, string)
+pattern:資料形式，string：要比對的文字
+----------------------------------------------------
+re.match(pattern, string)
+re.match跟re.search不同，re.match是從頭開始比對文字，他是檢測文字是否在開頭位置
+-----------------------------------------------------
+re.findall(pattern, string)
+re.findall是找尋文字中所有匹配的文字
+-----------------------------------------------------
+re.findall出來會是過list，而不會是group
