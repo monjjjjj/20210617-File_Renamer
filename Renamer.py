@@ -23,7 +23,7 @@ def folder_path():
 directory = folder_path()
 
 file = glob.glob(r"%s/*" % directory)
-print(file)
+# print(file)
 
 pattern = input("The pattern: ")
 replace = input("The replacement:")
