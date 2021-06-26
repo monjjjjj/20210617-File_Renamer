@@ -20,7 +20,7 @@ def folder_path():
             print("The path does not exist!")
 
 
-directory = "/Users/chloe/Desktop/20210617 File_Renamer/"
+directory = folder_path()
 
 file = glob.glob(r"%s/*" % directory)
 print(file)
@@ -30,7 +30,7 @@ replace = input("The replacement:")
 
 
 for filename in file:
-    new_name = re.sub(r"({0}){1}".format(directory, pattern), r"{0}".format(replace), filename)
+    new_name = re.sub(r"({0}/){1}".format(directory, pattern), r"{0}".format(replace), filename)
     print(r"({0}){1}".format(directory, pattern), r"{0}".format(replace), filename)
     print(new_name)
     os.rename(filename, new_name)

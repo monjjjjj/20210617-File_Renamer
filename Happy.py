@@ -8,6 +8,7 @@ def happy():
     print("Happy Chloe! Happy Johnny!")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("Call it locally~")
     happy()
+
