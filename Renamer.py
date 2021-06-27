@@ -6,7 +6,6 @@ import sys
 
 
 # file = glob.glob(r"/Users/chloe/Desktop/20210617 File_Renamer/*.xlsx")
-
 # for filename in file: new_name = re.sub(r"(/Users/chloe/Desktop/20210617 File_Renamer/)([A-Z]).*_([A-Z]).*_(\d)",
 # r"\g<1>\g<2>_\g<3>_\g<4>", filename) print(filename, new_name) os.rename(filename, new_name)
 
@@ -24,10 +23,6 @@ if __name__ == "__main__":
     direct = sys.argv[1]
     # directory = folder_path(direct)
     file = glob.glob(r"%s/*" % direct)
-    # print(file)
-
-    # pattern = input("The pattern: ")
-    # replace = input("The replacement:")
 
     for filename in file:
         new_name = re.sub(r"({0}/){1}".format(direct, sys.argv[2]), r"{0}".format(sys.argv[3]), filename)
