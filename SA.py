@@ -1,5 +1,6 @@
-import sys
+import os
 
-print("This is the name of the program:", sys.argv[0])
+directory = "/Users/chloe/Desktop/20210617_File_Renamer"
+files = os.listdir(directory)
 
-print("Argument List:", str(sys.argv))
+print(files)

@@ -1,20 +1,19 @@
 import re
-import glob
 import os.path
 import sys
 
 if __name__ == "__main__":
 
-    direct = sys.argv[1]
+    directory = sys.argv[1]
+    pattern = sys.argv[2]
+    replace = sys.argv[3]
 
-    if os.path.isdir(direct):
-        print("The path exists!")
-    else:
+    if not os.path.isdir(directory):
         print("The path does not exist!")
-
-    file = glob.glob(r"%s/*" % direct)
-
-    for filename in file:
-        new_name = re.sub(r"({0}/){1}".format(direct, sys.argv[2]), r"{0}".format(sys.argv[3]), filename)
-        os.rename(filename, new_name)
-print("Rename done!")
+    else:
+        os.chdir(r"%s" % directory)
+        files = os.listdir(directory)
+        for filename in files:
+            new_name = re.sub(r"{0}".format(pattern), r"{0}".format(replace), filename)
+            print(filename, '>>', new_name)
+            os.rename(filename, new_name)

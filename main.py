@@ -1,6 +1,7 @@
 # ShellExecutePython
 # import os
 import re
+import os
 
 # RenameFile
 # old_file_name = "/Users/chloe/Desktop/20210617 File_Renamer/Chloe_File_1.xlsx"
@@ -58,3 +59,11 @@ text1 = '賴清德選上副總統！'
 
 name = re.match(r'賴清德', text1).group(0)
 print(name)
+
+###################################################################
+
+
+directory = "/Users/chloe/Desktop/20210617_File_Renamer"
+files = os.listdir(directory)
+
+print(files)
