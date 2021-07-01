@@ -30,8 +30,9 @@ if __name__ == '__main__':
         files = os.listdir(".")    # dot = current directory
         for filename in files:
             new_name = re.sub(r"{0}".format(patt), r"{0}".format(replace), filename)
-            print(filename, '>>', new_name)
-            os.rename(filename, new_name)
+            if filename != new_name:
+                print(filename, '>>', new_name)
+                os.rename(filename, new_name)
 
 
 # 1F
